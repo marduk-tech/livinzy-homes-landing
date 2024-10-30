@@ -36,7 +36,7 @@ export default ({
   const navLinks = [
     <NavLinks key={1}>
       <NavLink href="./about">About</NavLink>
-      <NavLink href="#">FAQ</NavLink>
+      {/* <NavLink href="#">FAQ</NavLink> */}
       {/* <NavLink href="#">
         Locations
       </NavLink>
