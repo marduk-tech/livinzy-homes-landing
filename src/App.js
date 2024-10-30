@@ -105,6 +105,7 @@ import 'styles/style.css';
 import MainLandingPage from "MainLandingPage.js";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AboutUs from "AboutUs";
 
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
@@ -117,6 +118,7 @@ export default function App() {
       <Router>
         <Routes>
           <Route path="/" element={<MainLandingPage />} />
+          <Route path="/about" element={<AboutUs />} />
         </Routes>
       </Router>
     </>

@@ -65,7 +65,6 @@ export default ({
   return (
     <Container>
       <TwoColumn>
-        
         <TextColumn textOnLeft={textOnLeft}>
           <TextContent>
             <Subheading>{subheading}</Subheading>
