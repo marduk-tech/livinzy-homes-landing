@@ -91,11 +91,11 @@ export default () => {
           <LeftColumn>
             {/* <Notification>We have now launched operations in Europe.</Notification> */}
             <Heading>
-              <span>Invest in Farmlands</span>
+              <span>Buy a Farmhouse</span>
               <br />
-              <SlantedBackground>Own a Piece of Bangalore</SlantedBackground>
+              <SlantedBackground>Your Gateway To Better Lifestyle</SlantedBackground>
             </Heading>
-            <Description>Why buy flats when you can own a land ? Explore 10,000 sq ft farmland starting at just Rs 40 Lacs.</Description>
+            <Description>Own a piece of nature near Bangalore ? Explore 10,000 sq ft farmland starting at just Rs 40 Lacs.</Description>
             <PrimaryAction>Join the Waitlist</PrimaryAction>
           </LeftColumn>
           <RightColumn>
