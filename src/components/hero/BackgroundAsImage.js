@@ -106,7 +106,9 @@ export default () => {
               Own a piece of nature near Bangalore.Explore farmlands starting at Rs 30 Lacs.
             </Description>
             <br></br>
-            <PrimaryAction>Join the Waitlist</PrimaryAction>
+            <PrimaryAction onClick={() => {
+              window.location = "https://app.livinzy.com"
+            }}>Explore Properties</PrimaryAction>
           </LeftColumn>
           <RightColumn>
             {/* <StyledResponsiveVideoEmbed
