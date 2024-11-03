@@ -107,8 +107,8 @@ export default () => {
             </Description>
             <br></br>
             <PrimaryAction onClick={() => {
-              window.location = "https://app.livinzy.com"
-            }}>Explore Properties</PrimaryAction>
+              window.location = ""
+            }}>Launching Soon</PrimaryAction>
           </LeftColumn>
           <RightColumn>
             {/* <StyledResponsiveVideoEmbed
