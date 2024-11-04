@@ -129,7 +129,7 @@ export default ({
             ))}
           </TabsControl> */}
         </HeaderRow>
-        <img src="./home-demo.png" style={{margin: "auto", marginTop: 48, maxWidth: 1200}}></img>
+        <img src="./home-demo.png" style={{margin: "auto", marginTop: 48, width: "100%",maxWidth: 1200}}></img>
       </ContentWithPaddingXl>
       <DecoratorBlob1 />
       <DecoratorBlob2 />
