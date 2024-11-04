@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
@@ -66,6 +66,8 @@ const StyledResponsiveVideoEmbed = styled(ResponsiveVideoEmbed)`
 `;
 
 export default () => {
+  const containerRef = useRef(null);
+
   const navLinks = [
     <NavLinks key={1}>
       <NavLink href="./about">About</NavLink>
@@ -83,9 +85,38 @@ export default () => {
     //   </PrimaryLink>
     // </NavLinks>
   ];
+  
+  const [bgIndex, setBgIndex] = useState(0);
+
+  const bgImgs = [
+    "https://livinzy.s3.amazonaws.com/partner/1729482514004_bbjoktmocuq.webp",
+    "https://avillionfarms.com/wp-content/uploads/2022/09/Entrance-Swing-of-Avillion-Farm-2.png",
+    "https://livinzy.s3.amazonaws.com/partner/1729161912468_o5klfuc3w7j.webp",
+    "https://livinzy.s3.amazonaws.com/partner/1730012965857_b0ehxq9yw07.webp",
+    "https://livinzy.s3.amazonaws.com/partner/1730284680182_6fn7tavfv6d.webp"
+  ];
+
+  const changeBackground = (index) => {
+    if (containerRef.current) {
+      // Set the background image style directly on the div
+      containerRef.current.style.backgroundImage =
+        `url('${bgImgs[index%bgImgs.length]}')`;
+    }
+    setTimeout(() => {
+      changeBackground(index+1);
+    }, 4000)
+  };
+  
+
+  useEffect(() => {
+    changeBackground(0);
+
+  }, [bgImgs.length]);
+
+ 
 
   return (
-    <Container>
+    <Container ref={containerRef}>
       <OpacityOverlay />
       <HeroContainer>
         <StyledHeader links={navLinks} />
@@ -95,7 +126,9 @@ export default () => {
             <Heading>
               <span>Buy a Farmhouse</span>
               <br />
-              <SlantedBackground style={{marginLeft: 8}}>Live a Little</SlantedBackground>
+              <SlantedBackground style={{ marginLeft: 8 }}>
+                Live a Little
+              </SlantedBackground>
             </Heading>
             <Description
               style={{
@@ -105,12 +138,17 @@ export default () => {
                   " -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333",
               }}
             >
-              Own a piece of nature near Bangalore. Explore farmlands starting at Rs 30 Lacs.
+              Own a piece of nature near Bangalore. Explore farmlands starting
+              at Rs 30 Lacs.
             </Description>
             <br></br>
-            <PrimaryAction onClick={() => {
-              window.location = ""
-            }}>Launching Soon</PrimaryAction>
+            <PrimaryAction
+              onClick={() => {
+                window.location = "";
+              }}
+            >
+              Launching Soon
+            </PrimaryAction>
           </LeftColumn>
           <RightColumn>
             {/* <StyledResponsiveVideoEmbed
