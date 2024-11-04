@@ -129,63 +129,7 @@ export default ({
             ))}
           </TabsControl> */}
         </HeaderRow>
-
-        {tabsKeys.map((tabKey, index) => (
-          <TabContent
-            key={index}
-            variants={{
-              current: {
-                opacity: 1,
-                scale:1,
-                display: "flex",
-              },
-              hidden: {
-                opacity: 0,
-                scale:0.8,
-                display: "none",
-              }
-            }}
-            transition={{ duration: 0.4 }}
-            initial={activeTab === tabKey ? "current" : "hidden"}
-            animate={activeTab === tabKey ? "current" : "hidden"}
-          >
-            {tabs[tabKey].map((card, index) => (
-              <CardContainer key={index}>
-                <Card className="group" initial="rest" whileHover="hover" animate="rest">
-                  <CardImageContainer imageSrc={card.imageSrc}>
-                    {/* <CardRatingContainer>
-                      <CardRating>
-                        <StarIcon />
-                        {card.rating}
-                      </CardRating>
-                      <CardReview>({card.reviews})</CardReview>
-                    </CardRatingContainer> */}
-                    {/* <CardHoverOverlay
-                      variants={{
-                        hover: {
-                          opacity: 1,
-                          height: "auto"
-                        },
-                        rest: {
-                          opacity: 0,
-                          height: 0
-                        }
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <CardButton>Buy Now</CardButton>
-                    </CardHoverOverlay> */}
-                  </CardImageContainer>
-                  <CardText>
-                    <CardTitle>{card.title}</CardTitle>
-                    <CardContent>{card.content}</CardContent>
-                    <CardPrice>{card.price}</CardPrice>
-                  </CardText>
-                </Card>
-              </CardContainer>
-            ))}
-          </TabContent>
-        ))}
+        <img src="./home-demo.png" style={{margin: "auto", marginTop: 48, maxWidth: 1200}}></img>
       </ContentWithPaddingXl>
       <DecoratorBlob1 />
       <DecoratorBlob2 />

@@ -99,11 +99,13 @@ export default () => {
             </Heading>
             <Description
               style={{
+                maxWidth: 500,
+                fontSize: "130%",
                 textShadow:
                   " -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333",
               }}
             >
-              Own a piece of nature near Bangalore.Explore farmlands starting at Rs 30 Lacs.
+              Own a piece of nature near Bangalore. Explore farmlands starting at Rs 30 Lacs.
             </Description>
             <br></br>
             <PrimaryAction onClick={() => {
