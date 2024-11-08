@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import tw from "twin.macro";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
@@ -15,6 +15,8 @@ import Footer from "components/footers/FiveColumnWithInputForm.js";
 import chefIconImageSrc from "images/chef-icon.svg";
 import celebrationIconImageSrc from "images/celebration-icon.svg";
 import shopIconImageSrc from "images/shop-icon.svg";
+import ReactModal from "react-modal";
+import ConvertKitForm from "components/convertkit-form";
 
 export default () => {
   const Subheading = tw.span`tracking-wider text-sm font-medium`;
@@ -22,8 +24,12 @@ export default () => {
   const HighlightedTextInverse = tw.span`bg-gray-100 text-primary-500 px-4 transform -skew-x-12 inline-block`;
   const Description = tw.span`inline-block mt-8`;
   const imageCss = tw`rounded-4xl`;
+
   return (
     <AnimationRevealPage>
+
+
+     
       <Hero
         heading={
           <>

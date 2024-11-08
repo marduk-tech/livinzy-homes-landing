@@ -12,6 +12,8 @@ import Header, {
   DesktopNavLinks,
 } from "../headers/light.js";
 import ResponsiveVideoEmbed from "../../helpers/ResponsiveVideoEmbed.js";
+import ReactModal from "react-modal";
+import ConvertKitForm from "components/convertkit-form.js";
 
 const StyledHeader = styled(Header)`
   ${tw`pt-8 max-w-none`}
@@ -24,7 +26,7 @@ const StyledHeader = styled(Header)`
 `;
 const Container = styled.div`
   ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
-  background-image: url("https://avillionfarms.com/wp-content/uploads/2022/09/Entrance-Swing-of-Avillion-Farm-2.png");
+  background-image: url("https://livinzy.s3.amazonaws.com/partner/1730012965857_b0ehxq9yw07.webp");
   height: 100vh;
 `;
 
@@ -85,79 +87,103 @@ export default () => {
     //   </PrimaryLink>
     // </NavLinks>
   ];
-  
+
   const [bgIndex, setBgIndex] = useState(0);
 
   const bgImgs = [
+    "https://livinzy.s3.amazonaws.com/partner/1730012965857_b0ehxq9yw07.webp",
     "https://livinzy.s3.amazonaws.com/partner/1729482514004_bbjoktmocuq.webp",
     "https://avillionfarms.com/wp-content/uploads/2022/09/Entrance-Swing-of-Avillion-Farm-2.png",
     "https://livinzy.s3.amazonaws.com/partner/1729161912468_o5klfuc3w7j.webp",
-    "https://livinzy.s3.amazonaws.com/partner/1730012965857_b0ehxq9yw07.webp",
-    "https://livinzy.s3.amazonaws.com/partner/1730284680182_6fn7tavfv6d.webp"
+    "https://livinzy.s3.amazonaws.com/partner/1730284680182_6fn7tavfv6d.webp",
   ];
 
   const changeBackground = (index) => {
     if (containerRef.current) {
       // Set the background image style directly on the div
-      containerRef.current.style.backgroundImage =
-        `url('${bgImgs[index%bgImgs.length]}')`;
+      containerRef.current.style.backgroundImage = `url('${
+        bgImgs[index % bgImgs.length]
+      }')`;
     }
-    setTimeout(() => {
-      changeBackground(index+1);
-    }, 4000)
+    // setTimeout(() => {
+    //   changeBackground(index + 1);
+    // }, 4000);
   };
-  
+
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   useEffect(() => {
-    changeBackground(0);
-
+    // changeBackground(0);
   }, [bgImgs.length]);
 
- 
+  const openModal = () => setDialogOpen(true);
+  const closeModal = () => setDialogOpen(false);
 
   return (
-    <Container ref={containerRef}>
-      <OpacityOverlay />
-      <HeroContainer>
-        <StyledHeader links={navLinks} />
-        <TwoColumn>
-          <LeftColumn>
-            {/* <Notification>We have now launched operations in Europe.</Notification> */}
-            <Heading>
-              <span>Buy a Farmhouse</span>
-              <br />
-              <SlantedBackground style={{ marginLeft: 8 }}>
-                Live a Little
-              </SlantedBackground>
-            </Heading>
-            <Description
-              style={{
-                maxWidth: 500,
-                fontSize: "130%",
-                textShadow:
-                  " -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333",
-              }}
-            >
-              Own a piece of nature near Bangalore. Explore farmlands starting
-              at Rs 30 Lacs.
-            </Description>
-            <br></br>
-            <PrimaryAction
-              onClick={() => {
-                window.location = "";
-              }}
-            >
-              Launching Soon
-            </PrimaryAction>
-          </LeftColumn>
-          <RightColumn>
-            {/* <StyledResponsiveVideoEmbed
+    <>
+      <ReactModal
+        isOpen={dialogOpen}
+        onRequestClose={closeModal}
+        contentLabel="Subscribe Modal"
+        style={{
+          content: {
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            marginRight: "-50%",
+            width: 700,
+            height: 500,
+            transform: "translate(-50%, -50%)",
+          },
+        }}
+      >
+        <ConvertKitForm></ConvertKitForm>
+      </ReactModal>
+      <Container ref={containerRef}>
+        <OpacityOverlay />
+
+        <HeroContainer>
+          <StyledHeader links={navLinks} />
+          <TwoColumn>
+            <LeftColumn>
+              {/* <Notification>We have now launched operations in Europe.</Notification> */}
+              <Heading>
+                <span>Buy a Farmhouse</span>
+                <br />
+                <SlantedBackground style={{ marginLeft: 8 }}>
+                  Live a Little
+                </SlantedBackground>
+              </Heading>
+              <Description
+                style={{
+                  maxWidth: 500,
+                  fontSize: "130%",
+                  textShadow:
+                    " -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333",
+                }}
+              >
+                Own a piece of nature near Bangalore. Explore farmlands starting
+                at Rs 30 Lacs.
+              </Description>
+              <br></br>
+              <PrimaryAction
+                onClick={() => {
+                  openModal();
+                }}
+              >
+                Launching Soon
+              </PrimaryAction>
+            </LeftColumn>
+            <RightColumn>
+              {/* <StyledResponsiveVideoEmbed
               url="//player.vimeo.com/video/374265101?title=0&portrait=0&byline=0&autoplay=0&responsive=1"
               background="transparent"
             /> */}
-          </RightColumn>
-        </TwoColumn>
-      </HeroContainer>
-    </Container>
+            </RightColumn>
+          </TwoColumn>
+        </HeroContainer>
+      </Container>
+    </>
   );
 };
