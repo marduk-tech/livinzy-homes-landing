@@ -27,9 +27,6 @@ export default () => {
 
   return (
     <AnimationRevealPage>
-
-
-     
       <Hero
         heading={
           <>
@@ -38,13 +35,13 @@ export default () => {
           </>
         }
         description="Own a piece of nature near Bangalore.Explore farmlands starting at Rs 30 Lacs."
-        imageSrc="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
+        imageSrc="https://zolostays.com/blog/wp-content/uploads/2023/11/Best-Areas-to-Stay-in-Bangalore-A-Guide-for-Youngsters-scaled.jpg"
         imageCss={imageCss}
         imageDecoratorBlob={true}
         primaryButtonText="Order Now"
         watchVideoButtonText="Meet The Chefs"
       />
-      {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.*/}
+      {/* TabGrid Component also accepts a tabs prop to customize the tabs and its content directly. Please open the TabGrid component file to see the structure of the tabs props.
       <TabGrid
         heading={
           <>
@@ -52,6 +49,7 @@ export default () => {
           </>
         }
       />
+      
       <MainFeature
         subheading={<Subheading></Subheading>}
         heading={
@@ -101,6 +99,7 @@ export default () => {
         imageDecoratorBlob={true}
         imageDecoratorBlobCss={tw`left-1/2 -translate-x-1/2 md:w-32 md:h-32 opacity-25`}
       />
+      */}
 
       {/* <Features
         heading={
@@ -132,6 +131,7 @@ export default () => {
         imageContainerCss={tw`p-2!`}
         imageCss={tw`w-20! h-20!`}
       /> */}
+      {/* 
       <MainFeature2
         subheading={<Subheading></Subheading>}
         heading={
@@ -169,6 +169,7 @@ export default () => {
         imageDecoratorBlobCss={tw`left-1/2 md:w-32 md:h-32 -translate-x-1/2 opacity-25`}
         textOnLeft={true}
       />
+      
       <MainFeature2
         subheading={<Subheading></Subheading>}
         heading={
@@ -208,6 +209,7 @@ export default () => {
           },
         ]}
       />
+      */}
       {/* <Testimonial
         subheading=""
         heading={
@@ -224,7 +226,7 @@ export default () => {
           </>
         }
       /> */}
-      <Footer />
+      {/* <Footer /> */}
     </AnimationRevealPage>
   );
 };

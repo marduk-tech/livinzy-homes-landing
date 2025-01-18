@@ -26,7 +26,7 @@ const StyledHeader = styled(Header)`
 `;
 const Container = styled.div`
   ${tw`relative -mx-8 -mt-8 bg-center bg-cover`}
-  background-image: url("https://livinzy.s3.amazonaws.com/partner/1730012965857_b0ehxq9yw07.webp");
+  background-image: url("https://zolostays.com/blog/wp-content/uploads/2023/11/Best-Areas-to-Stay-in-Bangalore-A-Guide-for-Youngsters-scaled.jpg");
   height: 100vh;
 `;
 
@@ -72,7 +72,7 @@ export default () => {
 
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="./about">About</NavLink>
+      {/* <NavLink href="./about">About</NavLink> */}
       {/* <NavLink href="#">FAQ</NavLink> */}
       {/* <NavLink href="#">
         Locations
@@ -91,11 +91,7 @@ export default () => {
   const [bgIndex, setBgIndex] = useState(0);
 
   const bgImgs = [
-    "https://livinzy.s3.amazonaws.com/partner/1730012965857_b0ehxq9yw07.webp",
-    "https://livinzy.s3.amazonaws.com/partner/1729482514004_bbjoktmocuq.webp",
-    "https://avillionfarms.com/wp-content/uploads/2022/09/Entrance-Swing-of-Avillion-Farm-2.png",
-    "https://livinzy.s3.amazonaws.com/partner/1729161912468_o5klfuc3w7j.webp",
-    "https://livinzy.s3.amazonaws.com/partner/1730284680182_6fn7tavfv6d.webp",
+    "https://zolostays.com/blog/wp-content/uploads/2023/11/Best-Areas-to-Stay-in-Bangalore-A-Guide-for-Youngsters-scaled.jpg",
   ];
 
   const changeBackground = (index) => {
@@ -149,22 +145,21 @@ export default () => {
             <LeftColumn>
               {/* <Notification>We have now launched operations in Europe.</Notification> */}
               <Heading>
-                <span>Buy a Farmhouse</span>
                 <br />
-                <SlantedBackground style={{ marginLeft: 8 }}>
-                  Live a Little
-                </SlantedBackground>
+                <span> AI Intelligence for<br></br> Real Estate in India.</span>
+               
+                
               </Heading>
               <Description
                 style={{
-                  maxWidth: 500,
-                  fontSize: "130%",
+                  maxWidth: 900,
+                  lineHeight: "120%",
+                  fontSize: "160%",
                   textShadow:
                     " -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333",
                 }}
               >
-                Own a piece of nature near Bangalore. Explore farmlands starting
-                at Rs 30 Lacs.
+                India's online real estate market is plagued by overwhelming information, complexity, and uninspiring listings. Livinzy introduces real estate intelligence, effortless exploration, and a showcase of truly distinctive projects.
               </Description>
               <br></br>
               <PrimaryAction
