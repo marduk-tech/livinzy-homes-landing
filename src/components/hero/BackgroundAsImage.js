@@ -146,7 +146,7 @@ export default () => {
               {/* <Notification>We have now launched operations in Europe.</Notification> */}
               <Heading>
                 <br />
-                <span> AI Intelligence for<br></br> Real Estate in India.</span>
+                <span> AI Powered <br></br> Real Estate Intelligence in India.</span>
                
                 
               </Heading>
@@ -164,7 +164,7 @@ export default () => {
               <br></br>
               <PrimaryAction
                 onClick={() => {
-                  openModal();
+                  // openModal();
                 }}
               >
                 Launching Soon
